@@ -13,15 +13,17 @@ const theme = createTheme({
     },
 });
 
+const basename = import.meta.env.DEV ? '/' : '/weather-app';
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
         <Provider store={store}>
-            <BrowserRouter>
-                <ThemeProvider theme={theme}>
-                    <CssBaseline />
+            <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <BrowserRouter basename={basename}>
                     <App />
-                </ThemeProvider>
-            </BrowserRouter>
+                </BrowserRouter>
+            </ThemeProvider>
         </Provider>
     </React.StrictMode>
 );
