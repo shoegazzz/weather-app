@@ -4,8 +4,6 @@ import Weather from './pages/Weather';
 import Cities from './pages/Cities';
 
 const App = () => {
-    const basename = import.meta.env.DEV ? '/' : '/weather-app';
-    
     return (
         <Routes>
             <Route path="/" element={<Navigate to="/auth" replace />} />
